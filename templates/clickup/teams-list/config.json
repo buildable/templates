@@ -1,0 +1,27 @@
+{
+  "name": "teams",
+  "title": "List teams",
+  "description": "List all teams in a ClickUp workspace using the ClickUp Api",
+  "type": "js-request-function",
+  "envVars": {
+    "CLICKUP_API_TOKEN": {
+      "development": "",
+      "production": ""
+    }, 
+    "CLICKUP_API_URL": {
+      "development": "https://api.clickup.com/api/v2",
+      "production": "https://api.clickup.com/api/v2"
+    }
+  },
+  "fee": 0,
+  "image": "https://assets.buildable.dev/catalog/node-templates/clickup.svg",
+  "category": "productivity",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "platform": "clickup",
+  "tags": ["business","projects","teams"],
+  "stateType": "stateless",
+  "__version": "1.0.0"
+}
+
