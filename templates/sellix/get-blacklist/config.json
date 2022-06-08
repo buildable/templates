@@ -1,0 +1,26 @@
+{
+  "name": "blacklist",
+  "title": "Get Blacklisted Users",
+  "description": "Returns array of blacklisted users given a Sellix seller account.",
+  "type": "js-request-function",
+  "envVars": {
+    "SELLIX_API_KEY": {
+      "development": "",
+      "production": ""
+    },
+    "SELLIX_API_BASE": {
+      "development": "https://dev.sellix.io/v1",
+      "production": "https://dev.sellix.io/v1"
+    }
+  },
+  "fee": 0,
+  "image": "https://assets.buildable.dev/catalog/node-templates/sellix.svg",
+  "category": "ecommerce",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "platform": "",
+  "tags": ["Sellix", "Blacklist"],
+  "stateType": "stateless",
+  "__version": "1.0.0"
+}
