@@ -1,0 +1,18 @@
+{
+  "name": "postWebhookEndpointsResult",
+  "title": "<p>A Webhook Endpoint Must Have a <Code>url</code> and a List of <Code>enabled_events</code>. You Ma",
+  "description": "<p>a webhook endpoint must have a <code>url</code> and a list of <code>enabled_events</code>. You may optionally specify the boolean <code>connect</code> parameter. If set to true, then a connect webhook endpoint that notifies the specified <code>url</code> about events from all connected accounts is created; otherwise an account webhook endpoint that notifies the specified <code>url</code> only about events from your account is created. You can also create webhook endpoints in the <a href=\"https://dashboard.Stripe.Com/account/webhooks\">webhooks settings</a> section of the dashboard.</p> using the Stripe API",
+  "image": "https://assets.buildable.dev/catalog/node-templates/stripe.svg",
+  "platform": "stripe",
+  "type": "js-request-function",
+  "envVars": { "BUILDABLE_STRIPE_API_KEY": { "development": "", "production": "" } },
+  "fee": 0,
+  "category": "payments",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "tags": ["payments", "accounts"],
+  "stateType": "stateless",
+  "__version": "1.0.0",
+  "connections": [{ "id": "627aceaf971c67182d1d76ca", "type": "datastore" }]
+}

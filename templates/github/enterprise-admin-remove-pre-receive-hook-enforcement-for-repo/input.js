@@ -1,25 +1,7 @@
-/**
- * ----------------------------------------------------------------------------------------------------
- * Remove Pre-Receive Hook Enforcement for a Repository [Input]
- *
- * @author    Buildable Technologies Inc.
- * @access    open
- * @license   MIT
- * @docs      https://docs.github.com/enterprise-server@3.3/rest/reference/enterprise-admin#remove-pre-receive-hook-enforcement-for-a-repository
- * ----------------------------------------------------------------------------------------------------
- */
-
-/**
- * Lets you select the input for your Node's run function
- *
- * @param {Params} params
- * @param {Object} $trigger - This Flow's request object
- * @param {Object} $nodes - Data from above Nodes
- */
-const nodeInput = ({ $trigger, $nodes }) => {
+const nodeInput = ({ $body, $headers, $env, $data }) => {
   return {
-    GITHUB_API_TOKEN: $trigger.env.GITHUB_API_TOKEN, // Required
-    GITHUB_API_USERNAME: $trigger.env.GITHUB_API_USERNAME, // Required
+    BUILDABLE_GITHUB_ACCESS_TOKEN: $env.BUILDABLE_GITHUB_ACCESS_TOKEN, // Required
+    BUILDABLE_GITHUB_ACCOUNT_ID: $env.BUILDABLE_GITHUB_ACCOUNT_ID, // Required
     owner: "string", // Required
     repo: "string", // Required
     pre_receive_hook_id: 0, // Required

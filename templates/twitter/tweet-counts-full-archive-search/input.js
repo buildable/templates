@@ -1,24 +1,6 @@
-/**
- * ----------------------------------------------------------------------------------------------------
- * Full Archive Search Counts [Input]
- *
- * @author    Buildable Technologies Inc.
- * @access    open
- * @license   MIT
- * @docs      https://developer.twitter.com/en/docs/api-reference-index#twitter-api-v2
- * ----------------------------------------------------------------------------------------------------
- */
-
-/**
- * Lets you select the input for your Node's run function
- *
- * @param {Params} params
- * @param {Object} $trigger - This Flow's request object
- * @param {Object} $nodes - Data from above Nodes
- */
-const nodeInput = ({ $trigger, $nodes }) => {
+const nodeInput = ({ $body, $headers, $env, $data }) => {
   return {
-    TWITTER_BEARER_TOKEN: $trigger.env.TWITTER_BEARER_TOKEN, // Required
+    BUILDABLE_TWITTER_BEARER_TOKEN: $env.BUILDABLE_TWITTER_BEARER_TOKEN, // Required
     query: "(from:TwitterDev OR from:TwitterAPI) has:media -is:retweet", // Required
 
     // start_time: "2019-08-24T14:15:22Z",
@@ -28,5 +10,6 @@ const nodeInput = ({ $trigger, $nodes }) => {
     // next_token: "string",
     // pagination_token: "string",
     // granularity: "minute",
+    // search_countFields: ["end", "start", "tweet_count"],
   };
 };

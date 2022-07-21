@@ -1,0 +1,18 @@
+{
+  "name": "postInvoicesInvoiceResult",
+  "title": "<p>Draft Invoices Are Fully Editable. Once an Invoice Is <a href=\"/docs/billing/invoices/workflow#fi",
+  "description": "<p>draft invoices are fully editable. Once an invoice is <a href=\"/docs/billing/invoices/workflow#finalized\">finalized</a>,\nmonetary values, as well as <code>collection_method</code>, become uneditable.</p>\n\n<p>if you would like to stop the stripe billing engine from automatically finalizing, reattempting payments on,\nsending reminders for, or <a href=\"/docs/billing/invoices/reconciliation\">automatically reconciling</a> invoices, pass\n<code>auto_advance=false</code>.</p> using the Stripe API",
+  "image": "https://assets.buildable.dev/catalog/node-templates/stripe.svg",
+  "platform": "stripe",
+  "type": "js-request-function",
+  "envVars": { "BUILDABLE_STRIPE_API_KEY": { "development": "", "production": "" } },
+  "fee": 0,
+  "category": "payments",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "tags": ["payments", "accounts"],
+  "stateType": "stateless",
+  "__version": "1.0.0",
+  "connections": [{ "id": "627aceaf971c67182d1d76ca", "type": "datastore" }]
+}

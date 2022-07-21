@@ -1,0 +1,18 @@
+{
+  "name": "postInvoicesInvoiceMarkUncollectibleResult",
+  "title": "<p>Marking an Invoice as Uncollectible Is Useful for Keeping Track of Bad Debts that Can Be Written ",
+  "description": "<p>marking an invoice as uncollectible is useful for keeping track of bad debts that can be written off for accounting purposes.</p> using the Stripe API",
+  "image": "https://assets.buildable.dev/catalog/node-templates/stripe.svg",
+  "platform": "stripe",
+  "type": "js-request-function",
+  "envVars": { "BUILDABLE_STRIPE_API_KEY": { "development": "", "production": "" } },
+  "fee": 0,
+  "category": "payments",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "tags": ["payments", "accounts"],
+  "stateType": "stateless",
+  "__version": "1.0.0",
+  "connections": [{ "id": "627aceaf971c67182d1d76ca", "type": "datastore" }]
+}

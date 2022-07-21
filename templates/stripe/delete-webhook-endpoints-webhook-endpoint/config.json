@@ -1,0 +1,18 @@
+{
+  "name": "deleteWebhookEndpointsWebhookEndpointResult",
+  "title": "<p>You Can Also Delete Webhook Endpoints via the <a href=\"https://dashboard.stripe.com/account/webho",
+  "description": "<p>you can also delete webhook endpoints via the <a href=\"https://dashboard.Stripe.Com/account/webhooks\">webhook endpoint management</a> page of the stripe dashboard.</p> using the Stripe API",
+  "image": "https://assets.buildable.dev/catalog/node-templates/stripe.svg",
+  "platform": "stripe",
+  "type": "js-request-function",
+  "envVars": { "BUILDABLE_STRIPE_API_KEY": { "development": "", "production": "" } },
+  "fee": 0,
+  "category": "payments",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "tags": ["payments", "accounts"],
+  "stateType": "stateless",
+  "__version": "1.0.0",
+  "connections": [{ "id": "627aceaf971c67182d1d76ca", "type": "datastore" }]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "postPlansPlanResult",
+  "title": "<p>Updates the Specified Plan by Setting the Values of the Parameters Passed. Any Parameters Not Pro",
+  "description": "<p>updates the specified plan by setting the values of the parameters passed. Any parameters not provided are left unchanged. By design, you cannot change a plan’s id, amount, currency, or billing cycle.</p> using the Stripe API",
+  "image": "https://assets.buildable.dev/catalog/node-templates/stripe.svg",
+  "platform": "stripe",
+  "type": "js-request-function",
+  "envVars": { "BUILDABLE_STRIPE_API_KEY": { "development": "", "production": "" } },
+  "fee": 0,
+  "category": "payments",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "tags": ["payments", "accounts"],
+  "stateType": "stateless",
+  "__version": "1.0.0",
+  "connections": [{ "id": "627aceaf971c67182d1d76ca", "type": "datastore" }]
+}

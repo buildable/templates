@@ -1,26 +1,7 @@
-/**
- * ----------------------------------------------------------------------------------------------------
- * List All Customer Accounts [Run]
- *
- * @description - List all customer accounts using the Tatum API
- *
- * @author    Buildable Technologies Inc.
- * @access    open
- * @license   MIT
- * @docs      https://tatum.io/apidoc.php#operation/getAccountsByCustomerId
- *
- * ----------------------------------------------------------------------------------------------------
- */
-
 const axios = require("axios");
 
-/**
- * The Node’s executable function
- *
- * @param {Run} input - Data passed to your Node from the input function
- */
 const run = async (input) => {
-  const { TATUM_API_KEY, TATUM_API_URL, pageSize, id, offset, accountCode } =
+  const { BUILDABLE_TATUM_API_KEY, BUILDABLE_TATUM_API_URL, pageSize, id, offset, accountCode } =
     input;
 
   verifyInput(input);
@@ -28,13 +9,9 @@ const run = async (input) => {
   try {
     const { data } = await axios({
       method: "get",
-      url: `${TATUM_API_URL}/v3/ledger/account/customer/${id}`,
-      headers: { "x-api-key": TATUM_API_KEY },
-      params: {
-        pageSize,
-        ...(offset ? { offset } : {}),
-        ...(accountCode ? { accountCode } : {}),
-      },
+      url: `{TATUM_API_URL}/v3/ledger/account/customer/${id}`,
+      headers: { "x-api-key": BUILDABLE_TATUM_API_KEY },
+      params: { pageSize, ...(offset ? { offset } : {}), ...(accountCode ? { accountCode } : {}) },
     });
 
     return data;
@@ -50,21 +27,20 @@ const run = async (input) => {
 /**
  * Verifies the input parameters
  */
-const verifyInput = ({ TATUM_API_KEY, TATUM_API_URL, pageSize, id }) => {
+const verifyInput = ({ BUILDABLE_TATUM_API_KEY, BUILDABLE_TATUM_API_URL, pageSize, id }) => {
   const ERRORS = {
-    INVALID_TATUM_API_KEY:
-      "A valid TATUM_API_KEY field (string) was not provided in the input.",
-    INVALID_TATUM_API_URL:
-      "A valid TATUM_API_URL field (string) was not provided in the input.",
-    INVALID_PAGE_SIZE:
-      "A valid pageSize field (number) was not provided in the input.",
+    INVALID_BUILDABLE_TATUM_API_KEY:
+      "A valid BUILDABLE_TATUM_API_KEY field (string) was not provided in the input.",
+    INVALID_BUILDABLE_TATUM_API_URL:
+      "A valid BUILDABLE_TATUM_API_URL field (string) was not provided in the input.",
+    INVALID_PAGE_SIZE: "A valid pageSize field (number) was not provided in the input.",
     INVALID_ID: "A valid id field (string) was not provided in the input.",
   };
 
-  if (typeof TATUM_API_KEY !== "string")
-    throw new Error(ERRORS.INVALID_TATUM_API_KEY);
-  if (typeof TATUM_API_URL !== "string")
-    throw new Error(ERRORS.INVALID_TATUM_API_URL);
+  if (typeof BUILDABLE_TATUM_API_KEY !== "string")
+    throw new Error(ERRORS.INVALID_BUILDABLE_TATUM_API_KEY);
+  if (typeof BUILDABLE_TATUM_API_URL !== "string")
+    throw new Error(ERRORS.INVALID_BUILDABLE_TATUM_API_URL);
   if (typeof pageSize !== "number") throw new Error(ERRORS.INVALID_PAGE_SIZE);
   if (typeof id !== "string") throw new Error(ERRORS.INVALID_ID);
 };

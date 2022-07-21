@@ -1,0 +1,18 @@
+{
+  "name": "postReportingReportRunsResult",
+  "title": "<p>Creates a New Object and Begin Running the Report. (Certain Report Types Require a <a href=\"https",
+  "description": "<p>creates a new object and begin running the report. (certain report types require a <a href=\"https://stripe.Com/docs/keys#test-live-modes\">live-mode api key</a>.)</p> using the Stripe API",
+  "image": "https://assets.buildable.dev/catalog/node-templates/stripe.svg",
+  "platform": "stripe",
+  "type": "js-request-function",
+  "envVars": { "BUILDABLE_STRIPE_API_KEY": { "development": "", "production": "" } },
+  "fee": 0,
+  "category": "payments",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "tags": ["payments", "accounts"],
+  "stateType": "stateless",
+  "__version": "1.0.0",
+  "connections": [{ "id": "627aceaf971c67182d1d76ca", "type": "datastore" }]
+}

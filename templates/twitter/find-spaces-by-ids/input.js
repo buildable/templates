@@ -1,30 +1,14 @@
-/**
- * ----------------------------------------------------------------------------------------------------
- * Space Lookup up Space IDs [Input]
- *
- * @author    Buildable Technologies Inc.
- * @access    open
- * @license   MIT
- * @docs      https://developer.twitter.com/en/docs/api-reference-index#twitter-api-v2
- * ----------------------------------------------------------------------------------------------------
- */
-
-/**
- * Lets you select the input for your Node's run function
- *
- * @param {Params} params
- * @param {Object} $trigger - This Flow's request object
- * @param {Object} $nodes - Data from above Nodes
- */
-const nodeInput = ({ $trigger, $nodes }) => {
+const nodeInput = ({ $body, $headers, $env, $data }) => {
   return {
-    TWITTER_BEARER_TOKEN: $trigger.env.TWITTER_BEARER_TOKEN, // Required
+    BUILDABLE_TWITTER_BEARER_TOKEN: $env.BUILDABLE_TWITTER_BEARER_TOKEN, // Required
     ids: ["1SLjjRYNejbKM"], // Required
 
     // spaceFields: [
     //     "created_at",
     //     "creator_id",
+    //     "ended_at",
     //     "host_ids",
+    //     "id",
     //     "invited_user_ids",
     //     "is_ticketed",
     //     "lang",
@@ -32,9 +16,29 @@ const nodeInput = ({ $trigger, $nodes }) => {
     //     "scheduled_start",
     //     "speaker_ids",
     //     "started_at",
+    //     "state",
+    //     "subscriber_count",
     //     "title",
+    //     "topic_ids",
     //     "updated_at"
     //   ],
-    // expansions: ["creator_id", "host_ids", "invited_user_ids", "speaker_ids"],
+    // expansions: ["creator_id", "host_ids", "invited_user_ids", "speaker_ids", "topic_ids"],
+    // userFields: [
+    //     "created_at",
+    //     "description",
+    //     "entities",
+    //     "id",
+    //     "location",
+    //     "name",
+    //     "pinned_tweet_id",
+    //     "profile_image_url",
+    //     "protected",
+    //     "public_metrics",
+    //     "url",
+    //     "username",
+    //     "verified",
+    //     "withheld"
+    //   ],
+    // topicFields: ["description", "id", "name"],
   };
 };

@@ -1,24 +1,5 @@
-/**
- * ----------------------------------------------------------------------------------------------------
- * Get Currencies [Run]
- *
- * @description - List known currencies using the Coinbase API
- *
- * @author    Buildable Technologies Inc.
- * @access    open
- * @license   MIT
- * @docs      https://developers.coinbase.com/api/v2#get-currencies
- *
- * ----------------------------------------------------------------------------------------------------
- */
-
 const axios = require("axios");
 
-/**
- * The Node’s executable function
- *
- * @param {Run} input - Data passed to your Node from the input function
- */
 const run = async (input) => {
   const { baseURL } = input;
 

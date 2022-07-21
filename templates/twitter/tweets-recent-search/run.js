@@ -1,43 +1,24 @@
-/**
- * ----------------------------------------------------------------------------------------------------
- * Recent Search [Run]
- *
- * @description - Recent search using the Twitter API
- *
- * @author    Buildable Technologies Inc.
- * @access    open
- * @license   MIT
- * @docs      https://developer.twitter.com/en/docs/api-reference-index#twitter-api-v2
- *
- * ----------------------------------------------------------------------------------------------------
- */
-
 const axios = require("axios");
 const qs = require("qs");
 
-/**
- * The Node’s executable function
- *
- * @param {Run} input - Data passed to your Node from the input function
- */
 const run = async (input) => {
   const {
-    TWITTER_BEARER_TOKEN,
+    BUILDABLE_TWITTER_BEARER_TOKEN,
     query,
     start_time,
     end_time,
     since_id,
     until_id,
     max_results,
-    sort_order,
     next_token,
     pagination_token,
-    expansions,
+    sort_order,
     tweetFields,
-    userFields,
+    expansions,
     mediaFields,
-    placeFields,
     pollFields,
+    userFields,
+    placeFields,
   } = input;
 
   verifyInput(input);
@@ -46,7 +27,7 @@ const run = async (input) => {
     const { data } = await axios({
       method: "get",
       url: "https://api.twitter.com/2/tweets/search/recent",
-      headers: { Authorization: `Bearer ${TWITTER_BEARER_TOKEN}` },
+      headers: { Authorization: `Bearer ${BUILDABLE_TWITTER_BEARER_TOKEN}` },
       params: {
         query,
         ...(start_time ? { start_time } : {}),
@@ -54,15 +35,15 @@ const run = async (input) => {
         ...(since_id ? { since_id } : {}),
         ...(until_id ? { until_id } : {}),
         ...(max_results ? { max_results } : {}),
-        ...(sort_order ? { sort_order } : {}),
         ...(next_token ? { next_token } : {}),
         ...(pagination_token ? { pagination_token } : {}),
-        ...(expansions ? { expansions } : {}),
+        ...(sort_order ? { sort_order } : {}),
         ...(tweetFields ? { "tweet.fields": tweetFields } : {}),
-        ...(userFields ? { "user.fields": userFields } : {}),
+        ...(expansions ? { expansions } : {}),
         ...(mediaFields ? { "media.fields": mediaFields } : {}),
-        ...(placeFields ? { "place.fields": placeFields } : {}),
         ...(pollFields ? { "poll.fields": pollFields } : {}),
+        ...(userFields ? { "user.fields": userFields } : {}),
+        ...(placeFields ? { "place.fields": placeFields } : {}),
       },
       paramsSerializer: (params) => {
         return qs.stringify(params, { arrayFormat: "comma" });
@@ -82,15 +63,14 @@ const run = async (input) => {
 /**
  * Verifies the input parameters
  */
-const verifyInput = ({ TWITTER_BEARER_TOKEN, query }) => {
+const verifyInput = ({ BUILDABLE_TWITTER_BEARER_TOKEN, query }) => {
   const ERRORS = {
-    INVALID_TWITTER_BEARER_TOKEN:
-      "A valid TWITTER_BEARER_TOKEN field (string) was not provided in the input.",
-    INVALID_QUERY:
-      "A valid query field (string) was not provided in the input.",
+    INVALID_BUILDABLE_TWITTER_BEARER_TOKEN:
+      "A valid BUILDABLE_TWITTER_BEARER_TOKEN field (string) was not provided in the input.",
+    INVALID_QUERY: "A valid query field (string) was not provided in the input.",
   };
 
-  if (typeof TWITTER_BEARER_TOKEN !== "string")
-    throw new Error(ERRORS.INVALID_TWITTER_BEARER_TOKEN);
+  if (typeof BUILDABLE_TWITTER_BEARER_TOKEN !== "string")
+    throw new Error(ERRORS.INVALID_BUILDABLE_TWITTER_BEARER_TOKEN);
   if (typeof query !== "string") throw new Error(ERRORS.INVALID_QUERY);
 };

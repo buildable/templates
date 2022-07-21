@@ -5,7 +5,7 @@
   "image": "https://assets.buildable.dev/catalog/node-templates/notion.svg",
   "platform": "notion",
   "type": "js-request-function",
-  "envVars": { "NOTION_API_TOKEN": { "development": "", "production": "" } },
+  "envVars": { "BUILDABLE_NOTION_API_TOKEN": { "development": "", "production": "" } },
   "fee": 0,
   "category": "cms",
   "accessType": "open",

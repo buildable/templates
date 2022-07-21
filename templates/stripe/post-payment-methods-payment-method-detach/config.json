@@ -1,0 +1,18 @@
+{
+  "name": "postPaymentMethodsPaymentMethodDetachResult",
+  "title": "<p>Detaches a PaymentMethod Object From a Customer. After a PaymentMethod Is Detached, It Can No Lon",
+  "description": "<p>detaches a paymentmethod object from a customer. After a paymentmethod is detached, it can no longer be used for a payment or re-attached to a customer.</p> using the Stripe API",
+  "image": "https://assets.buildable.dev/catalog/node-templates/stripe.svg",
+  "platform": "stripe",
+  "type": "js-request-function",
+  "envVars": { "BUILDABLE_STRIPE_API_KEY": { "development": "", "production": "" } },
+  "fee": 0,
+  "category": "payments",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "tags": ["payments", "accounts"],
+  "stateType": "stateless",
+  "__version": "1.0.0",
+  "connections": [{ "id": "627aceaf971c67182d1d76ca", "type": "datastore" }]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "getExchangeRatesResult",
+  "title": "<p>Returns a List of Objects that Contain the Rates at Which Foreign Currencies Are Converted to One",
+  "description": "<p>returns a list of objects that contain the rates at which foreign currencies are converted to one another. Only shows the currencies for which stripe supports.</p> using the Stripe API",
+  "image": "https://assets.buildable.dev/catalog/node-templates/stripe.svg",
+  "platform": "stripe",
+  "type": "js-request-function",
+  "envVars": { "BUILDABLE_STRIPE_API_KEY": { "development": "", "production": "" } },
+  "fee": 0,
+  "category": "payments",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "tags": ["payments", "accounts"],
+  "stateType": "stateless",
+  "__version": "1.0.0",
+  "connections": [{ "id": "627aceaf971c67182d1d76ca", "type": "datastore" }]
+}

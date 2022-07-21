@@ -4,9 +4,7 @@
   "description": "Hide replies using the Twitter API",
   "image": "https://assets.buildable.dev/catalog/node-templates/twitter.svg",
   "type": "js-request-function",
-  "envVars": {
-    "TWITTER_BEARER_TOKEN": { "development": "", "production": "" }
-  },
+  "envVars": { "BUILDABLE_TWITTER_BEARER_TOKEN": { "development": "", "production": "" } },
   "fee": 0,
   "category": "social",
   "accessType": "open",
@@ -15,5 +13,6 @@
   "platform": "twitter",
   "tags": ["news", "tweet"],
   "stateType": "stateless",
-  "__version": "1.0.0"
+  "__version": "1.0.0",
+  "connections": [{ "id": "62d86a790bd36f737a23f636", "type": "integration" }]
 }

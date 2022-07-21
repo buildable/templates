@@ -1,34 +1,15 @@
-/**
- * ----------------------------------------------------------------------------------------------------
- * Send Payment in Batch [Run]
- *
- * @description - Send payment in batch using the Tatum API
- *
- * @author    Buildable Technologies Inc.
- * @access    open
- * @license   MIT
- * @docs      https://tatum.io/apidoc.php#operation/sendTransactionBatch
- *
- * ----------------------------------------------------------------------------------------------------
- */
-
 const axios = require("axios");
 
-/**
- * The Node’s executable function
- *
- * @param {Run} input - Data passed to your Node from the input function
- */
 const run = async (input) => {
-  const { TATUM_API_KEY, TATUM_API_URL, senderAccountId, transaction } = input;
+  const { BUILDABLE_TATUM_API_KEY, BUILDABLE_TATUM_API_URL, senderAccountId, transaction } = input;
 
   verifyInput(input);
 
   try {
     const { data } = await axios({
       method: "post",
-      url: `${TATUM_API_URL}/v3/ledger/transaction/batch`,
-      headers: { "x-api-key": TATUM_API_KEY },
+      url: "{TATUM_API_URL}/v3/ledger/transaction/batch",
+      headers: { "x-api-key": BUILDABLE_TATUM_API_KEY },
       data: { senderAccountId, ...(transaction ? { transaction } : {}) },
     });
 
@@ -45,20 +26,19 @@ const run = async (input) => {
 /**
  * Verifies the input parameters
  */
-const verifyInput = ({ TATUM_API_KEY, TATUM_API_URL, senderAccountId }) => {
+const verifyInput = ({ BUILDABLE_TATUM_API_KEY, BUILDABLE_TATUM_API_URL, senderAccountId }) => {
   const ERRORS = {
-    INVALID_TATUM_API_KEY:
-      "A valid TATUM_API_KEY field (string) was not provided in the input.",
-    INVALID_TATUM_API_URL:
-      "A valid TATUM_API_URL field (string) was not provided in the input.",
+    INVALID_BUILDABLE_TATUM_API_KEY:
+      "A valid BUILDABLE_TATUM_API_KEY field (string) was not provided in the input.",
+    INVALID_BUILDABLE_TATUM_API_URL:
+      "A valid BUILDABLE_TATUM_API_URL field (string) was not provided in the input.",
     INVALID_SENDER_ACCOUNT_ID:
       "A valid senderAccountId field (string) was not provided in the input.",
   };
 
-  if (typeof TATUM_API_KEY !== "string")
-    throw new Error(ERRORS.INVALID_TATUM_API_KEY);
-  if (typeof TATUM_API_URL !== "string")
-    throw new Error(ERRORS.INVALID_TATUM_API_URL);
-  if (typeof senderAccountId !== "string")
-    throw new Error(ERRORS.INVALID_SENDER_ACCOUNT_ID);
+  if (typeof BUILDABLE_TATUM_API_KEY !== "string")
+    throw new Error(ERRORS.INVALID_BUILDABLE_TATUM_API_KEY);
+  if (typeof BUILDABLE_TATUM_API_URL !== "string")
+    throw new Error(ERRORS.INVALID_BUILDABLE_TATUM_API_URL);
+  if (typeof senderAccountId !== "string") throw new Error(ERRORS.INVALID_SENDER_ACCOUNT_ID);
 };

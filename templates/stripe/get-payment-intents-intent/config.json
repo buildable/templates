@@ -1,0 +1,18 @@
+{
+  "name": "getPaymentIntentsIntentResult",
+  "title": "<p>Retrieves the Details of a PaymentIntent that Has Previously Been Created. </P><p>Client-Side Ret",
+  "description": "<p>retrieves the details of a paymentintent that has previously been created. </p>\n\n<p>client-side retrieval using a publishable key is allowed when the <code>client_secret</code> is provided in the query string. </p>\n\n<p>when retrieved with a publishable key, only a subset of properties will be returned. Please refer to the <a href=\"#payment_intent_object\">payment intent</a> object reference for more details.</p> using the Stripe API",
+  "image": "https://assets.buildable.dev/catalog/node-templates/stripe.svg",
+  "platform": "stripe",
+  "type": "js-request-function",
+  "envVars": { "BUILDABLE_STRIPE_API_KEY": { "development": "", "production": "" } },
+  "fee": 0,
+  "category": "payments",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "tags": ["payments", "accounts"],
+  "stateType": "stateless",
+  "__version": "1.0.0",
+  "connections": [{ "id": "627aceaf971c67182d1d76ca", "type": "datastore" }]
+}

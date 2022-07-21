@@ -1,0 +1,18 @@
+{
+  "name": "getProductsIdResult",
+  "title": "<p>Retrieves the Details of an Existing Product. Supply the Unique Product ID From Either a Product ",
+  "description": "<p>retrieves the details of an existing product. Supply the unique product id from either a product creation request or the product list, and stripe will return the corresponding product information.</p> using the Stripe API",
+  "image": "https://assets.buildable.dev/catalog/node-templates/stripe.svg",
+  "platform": "stripe",
+  "type": "js-request-function",
+  "envVars": { "BUILDABLE_STRIPE_API_KEY": { "development": "", "production": "" } },
+  "fee": 0,
+  "category": "payments",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "tags": ["payments", "accounts"],
+  "stateType": "stateless",
+  "__version": "1.0.0",
+  "connections": [{ "id": "627aceaf971c67182d1d76ca", "type": "datastore" }]
+}

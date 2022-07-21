@@ -1,0 +1,18 @@
+{
+  "name": "postCheckoutSessionsSessionExpireResult",
+  "title": "<p>A Session Can Be Expired when It Is in One of These Statuses: <Code>open</code> </P><p>After It E",
+  "description": "<p>a session can be expired when it is in one of these statuses: <code>open</code> </p>\n\n<p>after it expires, a customer can’t complete a session and customers loading the session see a message saying the session is expired.</p> using the Stripe API",
+  "image": "https://assets.buildable.dev/catalog/node-templates/stripe.svg",
+  "platform": "stripe",
+  "type": "js-request-function",
+  "envVars": { "BUILDABLE_STRIPE_API_KEY": { "development": "", "production": "" } },
+  "fee": 0,
+  "category": "payments",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "tags": ["payments", "accounts"],
+  "stateType": "stateless",
+  "__version": "1.0.0",
+  "connections": [{ "id": "627aceaf971c67182d1d76ca", "type": "datastore" }]
+}

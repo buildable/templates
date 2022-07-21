@@ -1,0 +1,18 @@
+{
+  "name": "deleteAccountsAccountResult",
+  "title": "<p>With <a href=\"/docs/connect\">Connect</a>, You Can Delete Accounts You manage.</p><p>Accounts Crea",
+  "description": "<p>with <a href=\"/docs/connect\">connect</a>, you can delete accounts you manage.</p>\n\n<p>accounts created using test-mode keys can be deleted at any time. Standard accounts created using live-mode keys cannot be deleted. Custom or express accounts created using live-mode keys can only be deleted once all balances are zero.</p>\n\n<p>if you want to delete your own account, use the <a href=\"https://dashboard.Stripe.Com/account\">account information tab in your account settings</a> instead.</p> using the Stripe API",
+  "image": "https://assets.buildable.dev/catalog/node-templates/stripe.svg",
+  "platform": "stripe",
+  "type": "js-request-function",
+  "envVars": { "BUILDABLE_STRIPE_API_KEY": { "development": "", "production": "" } },
+  "fee": 0,
+  "category": "payments",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "tags": ["payments", "accounts"],
+  "stateType": "stateless",
+  "__version": "1.0.0",
+  "connections": [{ "id": "627aceaf971c67182d1d76ca", "type": "datastore" }]
+}

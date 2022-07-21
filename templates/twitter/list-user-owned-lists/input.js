@@ -1,30 +1,36 @@
-/**
- * ----------------------------------------------------------------------------------------------------
- * Get a User's Owned Lists [Input]
- *
- * @author    Buildable Technologies Inc.
- * @access    open
- * @license   MIT
- * @docs      https://developer.twitter.com/en/docs/api-reference-index#twitter-api-v2
- * ----------------------------------------------------------------------------------------------------
- */
-
-/**
- * Lets you select the input for your Node's run function
- *
- * @param {Params} params
- * @param {Object} $trigger - This Flow's request object
- * @param {Object} $nodes - Data from above Nodes
- */
-const nodeInput = ({ $trigger, $nodes }) => {
+const nodeInput = ({ $body, $headers, $env, $data }) => {
   return {
-    TWITTER_BEARER_TOKEN: $trigger.env.TWITTER_BEARER_TOKEN, // Required
+    BUILDABLE_TWITTER_BEARER_TOKEN: $env.BUILDABLE_TWITTER_BEARER_TOKEN, // Required
     id: "2244994945", // Required
 
     // max_results: 100,
-    // pagination_token: 0,
-    // listFields: ["created_at", "description", "follower_count", "member_count", "name", "private"],
+    // pagination_token: "string",
+    // listFields: [
+    //     "created_at",
+    //     "description",
+    //     "follower_count",
+    //     "id",
+    //     "member_count",
+    //     "name",
+    //     "owner_id",
+    //     "private"
+    //   ],
     // expansions: ["owner_id"],
-    // userFields: ["username", "verified", "profile_image_url"],
+    // userFields: [
+    //     "created_at",
+    //     "description",
+    //     "entities",
+    //     "id",
+    //     "location",
+    //     "name",
+    //     "pinned_tweet_id",
+    //     "profile_image_url",
+    //     "protected",
+    //     "public_metrics",
+    //     "url",
+    //     "username",
+    //     "verified",
+    //     "withheld"
+    //   ],
   };
 };

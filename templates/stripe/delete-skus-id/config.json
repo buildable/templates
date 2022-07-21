@@ -1,0 +1,18 @@
+{
+  "name": "deleteSkusIdResult",
+  "title": "<p>Delete a SKU. Deleting a SKU Is only Possible Until It Has Been Used in an order.</p>",
+  "description": "<p>delete a sku. Deleting a sku is only possible until it has been used in an order.</p> using the Stripe API",
+  "image": "https://assets.buildable.dev/catalog/node-templates/stripe.svg",
+  "platform": "stripe",
+  "type": "js-request-function",
+  "envVars": { "BUILDABLE_STRIPE_API_KEY": { "development": "", "production": "" } },
+  "fee": 0,
+  "category": "payments",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "tags": ["payments", "accounts"],
+  "stateType": "stateless",
+  "__version": "1.0.0",
+  "connections": [{ "id": "627aceaf971c67182d1d76ca", "type": "datastore" }]
+}

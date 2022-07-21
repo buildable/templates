@@ -1,27 +1,9 @@
-/**
- * ----------------------------------------------------------------------------------------------------
- * Space Lookup by Space ID [Run]
- *
- * @description - Space lookup by space id using the Twitter API
- *
- * @author    Buildable Technologies Inc.
- * @access    open
- * @license   MIT
- * @docs      https://developer.twitter.com/en/docs/api-reference-index#twitter-api-v2
- *
- * ----------------------------------------------------------------------------------------------------
- */
-
 const axios = require("axios");
 const qs = require("qs");
 
-/**
- * The Node’s executable function
- *
- * @param {Run} input - Data passed to your Node from the input function
- */
 const run = async (input) => {
-  const { TWITTER_BEARER_TOKEN, id, spaceFields, expansions } = input;
+  const { BUILDABLE_TWITTER_BEARER_TOKEN, id, spaceFields, expansions, userFields, topicFields } =
+    input;
 
   verifyInput(input);
 
@@ -29,10 +11,12 @@ const run = async (input) => {
     const { data } = await axios({
       method: "get",
       url: `https://api.twitter.com/2/spaces/${id}`,
-      headers: { Authorization: `Bearer ${TWITTER_BEARER_TOKEN}` },
+      headers: { Authorization: `Bearer ${BUILDABLE_TWITTER_BEARER_TOKEN}` },
       params: {
         ...(spaceFields ? { "space.fields": spaceFields } : {}),
         ...(expansions ? { expansions } : {}),
+        ...(userFields ? { "user.fields": userFields } : {}),
+        ...(topicFields ? { "topic.fields": topicFields } : {}),
       },
       paramsSerializer: (params) => {
         return qs.stringify(params, { arrayFormat: "comma" });
@@ -52,14 +36,14 @@ const run = async (input) => {
 /**
  * Verifies the input parameters
  */
-const verifyInput = ({ TWITTER_BEARER_TOKEN, id }) => {
+const verifyInput = ({ BUILDABLE_TWITTER_BEARER_TOKEN, id }) => {
   const ERRORS = {
-    INVALID_TWITTER_BEARER_TOKEN:
-      "A valid TWITTER_BEARER_TOKEN field (string) was not provided in the input.",
+    INVALID_BUILDABLE_TWITTER_BEARER_TOKEN:
+      "A valid BUILDABLE_TWITTER_BEARER_TOKEN field (string) was not provided in the input.",
     INVALID_ID: "A valid id field (string) was not provided in the input.",
   };
 
-  if (typeof TWITTER_BEARER_TOKEN !== "string")
-    throw new Error(ERRORS.INVALID_TWITTER_BEARER_TOKEN);
+  if (typeof BUILDABLE_TWITTER_BEARER_TOKEN !== "string")
+    throw new Error(ERRORS.INVALID_BUILDABLE_TWITTER_BEARER_TOKEN);
   if (typeof id !== "string") throw new Error(ERRORS.INVALID_ID);
 };

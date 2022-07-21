@@ -1,0 +1,18 @@
+{
+  "name": "postAccountsAccountRejectResult",
+  "title": "<p>With <a href=\"/docs/connect\">Connect</a>, You May Flag Accounts as suspicious.</p><p>Test-Mode Cu",
+  "description": "<p>with <a href=\"/docs/connect\">connect</a>, you may flag accounts as suspicious.</p>\n\n<p>test-mode custom and express accounts can be rejected at any time. Accounts created using live-mode keys may only be rejected once all balances are zero.</p> using the Stripe API",
+  "image": "https://assets.buildable.dev/catalog/node-templates/stripe.svg",
+  "platform": "stripe",
+  "type": "js-request-function",
+  "envVars": { "BUILDABLE_STRIPE_API_KEY": { "development": "", "production": "" } },
+  "fee": 0,
+  "category": "payments",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "tags": ["payments", "accounts"],
+  "stateType": "stateless",
+  "__version": "1.0.0",
+  "connections": [{ "id": "627aceaf971c67182d1d76ca", "type": "datastore" }]
+}

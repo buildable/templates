@@ -1,28 +1,9 @@
-/**
- * ----------------------------------------------------------------------------------------------------
- * Set GitHub Actions Permissions for an Organization [Run]
- *
- * @description - Set github actions permissions for an organization using the Github API
- *
- * @author    Buildable Technologies Inc.
- * @access    open
- * @license   MIT
- * @docs      https://docs.github.com/enterprise-server@3.3/rest/reference/actions#set-github-actions-permissions-for-an-organization
- *
- * ----------------------------------------------------------------------------------------------------
- */
-
 const axios = require("axios");
 
-/**
- * The Node’s executable function
- *
- * @param {Run} input - Data passed to your Node from the input function
- */
 const run = async (input) => {
   const {
-    GITHUB_API_TOKEN,
-    GITHUB_API_USERNAME,
+    BUILDABLE_GITHUB_ACCESS_TOKEN,
+    BUILDABLE_GITHUB_ACCOUNT_ID,
     org,
     enabled_repositories,
     allowed_actions,
@@ -34,11 +15,8 @@ const run = async (input) => {
     const { data } = await axios({
       method: "put",
       url: `https://api.github.com/orgs/${org}/actions/permissions`,
-      auth: { password: GITHUB_API_TOKEN, username: GITHUB_API_USERNAME },
-      data: {
-        enabled_repositories,
-        ...(allowed_actions ? { allowed_actions } : {}),
-      },
+      auth: { password: BUILDABLE_GITHUB_ACCESS_TOKEN, username: BUILDABLE_GITHUB_ACCOUNT_ID },
+      data: { enabled_repositories, ...(allowed_actions ? { allowed_actions } : {}) },
     });
 
     return data;
@@ -55,25 +33,25 @@ const run = async (input) => {
  * Verifies the input parameters
  */
 const verifyInput = ({
-  GITHUB_API_TOKEN,
-  GITHUB_API_USERNAME,
+  BUILDABLE_GITHUB_ACCESS_TOKEN,
+  BUILDABLE_GITHUB_ACCOUNT_ID,
   org,
   enabled_repositories,
 }) => {
   const ERRORS = {
-    INVALID_GITHUB_API_TOKEN:
-      "A valid GITHUB_API_TOKEN field (string) was not provided in the input.",
-    INVALID_GITHUB_API_USERNAME:
-      "A valid GITHUB_API_USERNAME field (string) was not provided in the input.",
+    INVALID_BUILDABLE_GITHUB_ACCESS_TOKEN:
+      "A valid BUILDABLE_GITHUB_ACCESS_TOKEN field (string) was not provided in the input.",
+    INVALID_BUILDABLE_GITHUB_ACCOUNT_ID:
+      "A valid BUILDABLE_GITHUB_ACCOUNT_ID field (string) was not provided in the input.",
     INVALID_ORG: "A valid org field (string) was not provided in the input.",
     INVALID_ENABLED_REPOSITORIES:
       "A valid enabled_repositories field (string) was not provided in the input.",
   };
 
-  if (typeof GITHUB_API_TOKEN !== "string")
-    throw new Error(ERRORS.INVALID_GITHUB_API_TOKEN);
-  if (typeof GITHUB_API_USERNAME !== "string")
-    throw new Error(ERRORS.INVALID_GITHUB_API_USERNAME);
+  if (typeof BUILDABLE_GITHUB_ACCESS_TOKEN !== "string")
+    throw new Error(ERRORS.INVALID_BUILDABLE_GITHUB_ACCESS_TOKEN);
+  if (typeof BUILDABLE_GITHUB_ACCOUNT_ID !== "string")
+    throw new Error(ERRORS.INVALID_BUILDABLE_GITHUB_ACCOUNT_ID);
   if (typeof org !== "string") throw new Error(ERRORS.INVALID_ORG);
   if (typeof enabled_repositories !== "string")
     throw new Error(ERRORS.INVALID_ENABLED_REPOSITORIES);

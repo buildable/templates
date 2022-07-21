@@ -1,0 +1,18 @@
+{
+  "name": "postPayoutsResult",
+  "title": "<p>To Send Funds to Your Own Bank Account, You Create a New Payout Object. Your <a href=\"#balance\">S",
+  "description": "<p>to send funds to your own bank account, you create a new payout object. Your <a href=\"#balance\">stripe balance</a> must be able to cover the payout amount, or you’ll receive an “insufficient funds” error.</p>\n\n<p>if your api key is in test mode, money won’t actually be sent, though everything else will occur as if in live mode.</p>\n\n<p>if you are creating a manual payout on a stripe account that uses multiple payment source types, you’ll need to specify the source type balance that the payout should draw from. The <a href=\"#balance_object\">balance object</a> details available and pending amounts by source type.</p> using the Stripe API",
+  "image": "https://assets.buildable.dev/catalog/node-templates/stripe.svg",
+  "platform": "stripe",
+  "type": "js-request-function",
+  "envVars": { "BUILDABLE_STRIPE_API_KEY": { "development": "", "production": "" } },
+  "fee": 0,
+  "category": "payments",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "tags": ["payments", "accounts"],
+  "stateType": "stateless",
+  "__version": "1.0.0",
+  "connections": [{ "id": "627aceaf971c67182d1d76ca", "type": "datastore" }]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "result",
+  "title": "<p>Perform an Incremental Authorization on an Eligible<a href=\"/docs/api/payment_intents/object\">Pay",
+  "description": "<p>perform an incremental authorization on an eligible\n<a href=\"/docs/api/payment_intents/object\">paymentintent</a>. To be eligible, the\npaymentintent’s status must be <code>requires_capture</code> and\n<a href=\"/docs/api/charges/object#charge_object-payment_method_details-card_present-incremental_authorization_supported\">incremental_authorization_supported</a>\nmust be <code>true</code>.</p>\n\n<p>incremental authorizations attempt to increase the authorized amount on\nyour customer’s card to the new, higher <code>amount</code> provided. As with the\ninitial authorization, incremental authorizations may be declined. A\nsingle paymentintent can call this endpoint multiple times to further\nincrease the authorized amount.</p>\n\n<p>if the incremental authorization succeeds, the paymentintent object is\nreturned with the updated\n<a href=\"/docs/api/payment_intents/object#payment_intent_object-amount\">amount</a>.\nIf the incremental authorization fails, a\n<a href=\"/docs/error-codes#card-declined\">card_declined</a> error is returned, and no\nfields on the paymentintent or charge are updated. The paymentintent\nobject remains capturable for the previously authorized amount.</p>\n\n<p>each paymentintent can have a maximum of 10 incremental authorization attempts, including declines.\nOnce captured, a paymentintent can no longer be incremented.</p>\n\n<p>learn more about <a href=\"/docs/terminal/features/incremental-authorizations\">incremental authorizations</a>.</p> using the Stripe API",
+  "image": "https://assets.buildable.dev/catalog/node-templates/stripe.svg",
+  "platform": "stripe",
+  "type": "js-request-function",
+  "envVars": { "BUILDABLE_STRIPE_API_KEY": { "development": "", "production": "" } },
+  "fee": 0,
+  "category": "payments",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "tags": ["payments", "accounts"],
+  "stateType": "stateless",
+  "__version": "1.0.0",
+  "connections": [{ "id": "627aceaf971c67182d1d76ca", "type": "datastore" }]
+}

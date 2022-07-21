@@ -1,0 +1,18 @@
+{
+  "name": "postAccountsResult",
+  "title": "<p>With <a href=\"/docs/connect\">Connect</a>, You Can Create Stripe Accounts for Your Users.To Do Thi",
+  "description": "<p>with <a href=\"/docs/connect\">connect</a>, you can create stripe accounts for your users.\nTo do this, you’ll first need to <a href=\"https://dashboard.Stripe.Com/account/applications/settings\">register your platform</a>.</p> using the Stripe API",
+  "image": "https://assets.buildable.dev/catalog/node-templates/stripe.svg",
+  "platform": "stripe",
+  "type": "js-request-function",
+  "envVars": { "BUILDABLE_STRIPE_API_KEY": { "development": "", "production": "" } },
+  "fee": 0,
+  "category": "payments",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "tags": ["payments", "accounts"],
+  "stateType": "stateless",
+  "__version": "1.0.0",
+  "connections": [{ "id": "627aceaf971c67182d1d76ca", "type": "datastore" }]
+}

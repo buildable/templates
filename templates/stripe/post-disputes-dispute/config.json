@@ -1,0 +1,18 @@
+{
+  "name": "postDisputesDisputeResult",
+  "title": "<p>When You Get a Dispute, Contacting Your Customer Is Always the Best First Step. If that Doesn’t W",
+  "description": "<p>when you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your <a href=\"https://dashboard.Stripe.Com/disputes\">dashboard</a>, but if you prefer, you can use the api to submit evidence programmatically.</p>\n\n<p>depending on your dispute type, different evidence fields will give you a better chance of winning your dispute. To figure out which evidence fields to provide, see our <a href=\"/docs/disputes/categories\">guide to dispute types</a>.</p> using the Stripe API",
+  "image": "https://assets.buildable.dev/catalog/node-templates/stripe.svg",
+  "platform": "stripe",
+  "type": "js-request-function",
+  "envVars": { "BUILDABLE_STRIPE_API_KEY": { "development": "", "production": "" } },
+  "fee": 0,
+  "category": "payments",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "tags": ["payments", "accounts"],
+  "stateType": "stateless",
+  "__version": "1.0.0",
+  "connections": [{ "id": "627aceaf971c67182d1d76ca", "type": "datastore" }]
+}

@@ -4,9 +4,10 @@
   "description": "Add user access restrictions using the Github API",
   "image": "https://assets.buildable.dev/catalog/node-templates/github.svg",
   "platform": "github",
+  "type": "js-request-function",
   "envVars": {
-    "GITHUB_API_TOKEN": { "development": "", "production": "" },
-    "GITHUB_API_USERNAME": { "development": "", "production": "" }
+    "BUILDABLE_GITHUB_ACCESS_TOKEN": { "development": "", "production": "" },
+    "BUILDABLE_GITHUB_ACCOUNT_ID": { "development": "", "production": "" }
   },
   "fee": 0,
   "category": "git",
@@ -14,7 +15,7 @@
   "language": "javascript",
   "price": "free",
   "tags": ["git", "code"],
-  "type": "js-request-function",
   "stateType": "stateless",
-  "__version": "1.0.0"
+  "__version": "1.0.0",
+  "connections": [{ "id": "627aceaf971c67182d1d76ca", "type": "integration" }]
 }

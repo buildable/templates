@@ -1,0 +1,18 @@
+{
+  "name": "postChargesChargeRefundResult",
+  "title": "<p>When You Create a New Refund, You Must Specify a Charge or a PaymentIntent Object on Which to Cre",
+  "description": "<p>when you create a new refund, you must specify a charge or a paymentintent object on which to create it.</p>\n\n<p>creating a new refund will refund a charge that has previously been created but not yet refunded.\nFunds will be refunded to the credit or debit card that was originally charged.</p>\n\n<p>you can optionally refund only part of a charge.\nYou can do so multiple times, until the entire charge has been refunded.</p>\n\n<p>once entirely refunded, a charge can’t be refunded again.\nThis method will raise an error when called on an already-refunded charge,\nor when trying to refund more money than is left on a charge.</p> using the Stripe API",
+  "image": "https://assets.buildable.dev/catalog/node-templates/stripe.svg",
+  "platform": "stripe",
+  "type": "js-request-function",
+  "envVars": { "BUILDABLE_STRIPE_API_KEY": { "development": "", "production": "" } },
+  "fee": 0,
+  "category": "payments",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "tags": ["payments", "accounts"],
+  "stateType": "stateless",
+  "__version": "1.0.0",
+  "connections": [{ "id": "627aceaf971c67182d1d76ca", "type": "datastore" }]
+}

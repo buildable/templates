@@ -1,26 +1,7 @@
-/**
- * ----------------------------------------------------------------------------------------------------
- * Create a Database [Input]
- *
- * @author    Buildable Technologies Inc.
- * @access    open
- * @license   MIT
- * @docs      https://developers.notion.com/reference/create-a-database
- *
- * ----------------------------------------------------------------------------------------------------
- */
-
-/**
- * Lets you select the input for your Node's run function
- *
- * @param {Params} params
- * @param {Object} $trigger - This Flow's request object
- * @param {Object} $nodes - Data from above Nodes
- */
-const nodeInput = ({ $trigger, $nodes }) => {
+const nodeInput = ({ $body, $headers, $env, $data }) => {
   return {
     notionVersion: "2022-02-22", // Required
-    NOTION_API_TOKEN: $trigger.env.NOTION_API_TOKEN, // Required
+    BUILDABLE_NOTION_API_TOKEN: $env.BUILDABLE_NOTION_API_TOKEN, // Required
     parent: { type: "page_id", page_id: "{{PAGE_ID}}" }, // Required
     properties: {
       Name: { title: {} },

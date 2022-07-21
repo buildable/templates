@@ -1,0 +1,18 @@
+{
+  "name": "postTestHelpersTestClocksTestClockAdvanceResult",
+  "title": "<p>Starts Advancing a Test Clock to a Specified Time in the Future. Advancement Is Done when Status ",
+  "description": "<p>starts advancing a test clock to a specified time in the future. Advancement is done when status changes to <code>ready</code>.</p> using the Stripe API",
+  "image": "https://assets.buildable.dev/catalog/node-templates/stripe.svg",
+  "platform": "stripe",
+  "type": "js-request-function",
+  "envVars": { "BUILDABLE_STRIPE_API_KEY": { "development": "", "production": "" } },
+  "fee": 0,
+  "category": "payments",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "tags": ["payments", "accounts"],
+  "stateType": "stateless",
+  "__version": "1.0.0",
+  "connections": [{ "id": "627aceaf971c67182d1d76ca", "type": "datastore" }]
+}

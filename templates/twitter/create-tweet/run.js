@@ -1,36 +1,17 @@
-/**
- * ----------------------------------------------------------------------------------------------------
- * Creation of a Tweet [Run]
- *
- * @description - Creation of a tweet using the Twitter API
- *
- * @author    Buildable Technologies Inc.
- * @access    open
- * @license   MIT
- * @docs      https://developer.twitter.com/en/docs/api-reference-index#twitter-api-v2
- *
- * ----------------------------------------------------------------------------------------------------
- */
-
 const axios = require("axios");
 
-/**
- * The Node’s executable function
- *
- * @param {Run} input - Data passed to your Node from the input function
- */
 const run = async (input) => {
   const {
-    TWITTER_BEARER_TOKEN,
-    text,
+    BUILDABLE_TWITTER_BEARER_TOKEN,
     direct_message_deep_link,
-    quote_tweet_id,
     for_super_followers_only,
-    reply,
+    geo,
     media,
     poll,
+    quote_tweet_id,
+    reply,
     reply_settings,
-    geo,
+    text,
   } = input;
 
   verifyInput(input);
@@ -39,17 +20,17 @@ const run = async (input) => {
     const { data } = await axios({
       method: "post",
       url: "https://api.twitter.com/2/tweets",
-      headers: { Authorization: `Bearer ${TWITTER_BEARER_TOKEN}` },
+      headers: { Authorization: `Bearer ${BUILDABLE_TWITTER_BEARER_TOKEN}` },
       data: {
-        ...(text ? { text } : {}),
         ...(direct_message_deep_link ? { direct_message_deep_link } : {}),
-        ...(quote_tweet_id ? { quote_tweet_id } : {}),
         ...(for_super_followers_only ? { for_super_followers_only } : {}),
-        ...(reply ? { reply } : {}),
+        ...(geo ? { geo } : {}),
         ...(media ? { media } : {}),
         ...(poll ? { poll } : {}),
+        ...(quote_tweet_id ? { quote_tweet_id } : {}),
+        ...(reply ? { reply } : {}),
         ...(reply_settings ? { reply_settings } : {}),
-        ...(geo ? { geo } : {}),
+        ...(text ? { text } : {}),
       },
     });
 
@@ -66,12 +47,12 @@ const run = async (input) => {
 /**
  * Verifies the input parameters
  */
-const verifyInput = ({ TWITTER_BEARER_TOKEN }) => {
+const verifyInput = ({ BUILDABLE_TWITTER_BEARER_TOKEN }) => {
   const ERRORS = {
-    INVALID_TWITTER_BEARER_TOKEN:
-      "A valid TWITTER_BEARER_TOKEN field (string) was not provided in the input.",
+    INVALID_BUILDABLE_TWITTER_BEARER_TOKEN:
+      "A valid BUILDABLE_TWITTER_BEARER_TOKEN field (string) was not provided in the input.",
   };
 
-  if (typeof TWITTER_BEARER_TOKEN !== "string")
-    throw new Error(ERRORS.INVALID_TWITTER_BEARER_TOKEN);
+  if (typeof BUILDABLE_TWITTER_BEARER_TOKEN !== "string")
+    throw new Error(ERRORS.INVALID_BUILDABLE_TWITTER_BEARER_TOKEN);
 };

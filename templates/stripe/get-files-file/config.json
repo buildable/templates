@@ -1,0 +1,18 @@
+{
+  "name": "getFilesFileResult",
+  "title": "<p>Retrieves the Details of an Existing File Object. Supply the Unique File ID From a File, and Stri",
+  "description": "<p>retrieves the details of an existing file object. Supply the unique file id from a file, and stripe will return the corresponding file object. To access file contents, see the <a href=\"/docs/file-upload#download-file-contents\">file upload guide</a>.</p> using the Stripe API",
+  "image": "https://assets.buildable.dev/catalog/node-templates/stripe.svg",
+  "platform": "stripe",
+  "type": "js-request-function",
+  "envVars": { "BUILDABLE_STRIPE_API_KEY": { "development": "", "production": "" } },
+  "fee": 0,
+  "category": "payments",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "tags": ["payments", "accounts"],
+  "stateType": "stateless",
+  "__version": "1.0.0",
+  "connections": [{ "id": "627aceaf971c67182d1d76ca", "type": "datastore" }]
+}

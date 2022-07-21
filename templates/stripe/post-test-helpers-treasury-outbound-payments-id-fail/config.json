@@ -1,0 +1,18 @@
+{
+  "name": "result",
+  "title": "<p>Transitions a Test Mode Created OutboundPayment to the <Code>failed</code> Status. The OutboundPa",
+  "description": "<p>transitions a test mode created outboundpayment to the <code>failed</code> status. The outboundpayment must already be in the <code>processing</code> state.</p> using the Stripe API",
+  "image": "https://assets.buildable.dev/catalog/node-templates/stripe.svg",
+  "platform": "stripe",
+  "type": "js-request-function",
+  "envVars": { "BUILDABLE_STRIPE_API_KEY": { "development": "", "production": "" } },
+  "fee": 0,
+  "category": "payments",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "tags": ["payments", "accounts"],
+  "stateType": "stateless",
+  "__version": "1.0.0",
+  "connections": [{ "id": "627aceaf971c67182d1d76ca", "type": "datastore" }]
+}

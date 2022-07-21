@@ -1,26 +1,7 @@
-/**
- * ----------------------------------------------------------------------------------------------------
- * Create XRP Based Asset [Run]
- *
- * @description - Create xrp based asset using the Tatum API
- *
- * @author    Buildable Technologies Inc.
- * @access    open
- * @license   MIT
- * @docs      https://tatum.io/apidoc.php#operation/XrpAssetOffchain
- *
- * ----------------------------------------------------------------------------------------------------
- */
-
 const axios = require("axios");
 
-/**
- * The Node’s executable function
- *
- * @param {Run} input - Data passed to your Node from the input function
- */
 const run = async (input) => {
-  const { TATUM_API_KEY, TATUM_API_URL, issuerAccount, token, basePair } =
+  const { BUILDABLE_TATUM_API_KEY, BUILDABLE_TATUM_API_URL, issuerAccount, token, basePair } =
     input;
 
   verifyInput(input);
@@ -28,8 +9,8 @@ const run = async (input) => {
   try {
     const { data } = await axios({
       method: "post",
-      url: `${TATUM_API_URL}/v3/offchain/xrp/asset`,
-      headers: { "x-api-key": TATUM_API_KEY },
+      url: "{TATUM_API_URL}/v3/offchain/xrp/asset",
+      headers: { "x-api-key": BUILDABLE_TATUM_API_KEY },
       data: { issuerAccount, token, basePair },
     });
 
@@ -47,31 +28,27 @@ const run = async (input) => {
  * Verifies the input parameters
  */
 const verifyInput = ({
-  TATUM_API_KEY,
-  TATUM_API_URL,
+  BUILDABLE_TATUM_API_KEY,
+  BUILDABLE_TATUM_API_URL,
   issuerAccount,
   token,
   basePair,
 }) => {
   const ERRORS = {
-    INVALID_TATUM_API_KEY:
-      "A valid TATUM_API_KEY field (string) was not provided in the input.",
-    INVALID_TATUM_API_URL:
-      "A valid TATUM_API_URL field (string) was not provided in the input.",
-    INVALID_ISSUER_ACCOUNT:
-      "A valid issuerAccount field (string) was not provided in the input.",
-    INVALID_TOKEN:
-      "A valid token field (string) was not provided in the input.",
-    INVALID_BASE_PAIR:
-      "A valid basePair field (string) was not provided in the input.",
+    INVALID_BUILDABLE_TATUM_API_KEY:
+      "A valid BUILDABLE_TATUM_API_KEY field (string) was not provided in the input.",
+    INVALID_BUILDABLE_TATUM_API_URL:
+      "A valid BUILDABLE_TATUM_API_URL field (string) was not provided in the input.",
+    INVALID_ISSUER_ACCOUNT: "A valid issuerAccount field (string) was not provided in the input.",
+    INVALID_TOKEN: "A valid token field (string) was not provided in the input.",
+    INVALID_BASE_PAIR: "A valid basePair field (string) was not provided in the input.",
   };
 
-  if (typeof TATUM_API_KEY !== "string")
-    throw new Error(ERRORS.INVALID_TATUM_API_KEY);
-  if (typeof TATUM_API_URL !== "string")
-    throw new Error(ERRORS.INVALID_TATUM_API_URL);
-  if (typeof issuerAccount !== "string")
-    throw new Error(ERRORS.INVALID_ISSUER_ACCOUNT);
+  if (typeof BUILDABLE_TATUM_API_KEY !== "string")
+    throw new Error(ERRORS.INVALID_BUILDABLE_TATUM_API_KEY);
+  if (typeof BUILDABLE_TATUM_API_URL !== "string")
+    throw new Error(ERRORS.INVALID_BUILDABLE_TATUM_API_URL);
+  if (typeof issuerAccount !== "string") throw new Error(ERRORS.INVALID_ISSUER_ACCOUNT);
   if (typeof token !== "string") throw new Error(ERRORS.INVALID_TOKEN);
   if (typeof basePair !== "string") throw new Error(ERRORS.INVALID_BASE_PAIR);
 };

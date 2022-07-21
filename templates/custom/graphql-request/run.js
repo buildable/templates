@@ -1,24 +1,5 @@
-/**
- * ----------------------------------------------------------------------------------------------------
- * GraphQL Request [Run]
- *
- * @description - Perform a request using GraphQL
- *
- * @author    Buildable Technologies Inc.
- * @access    open
- * @license   MIT
- * @docs      https://www.npmjs.com/package/graphql-request
- *
- * ----------------------------------------------------------------------------------------------------
- */
-
 const { request } = require("graphql-request");
 
-/**
- * The Node’s executable function
- *
- * @param {Run} input - Data passed to your Node from the input function
- */
 const run = async (input) => {
   const { endpoint, query, variables = {}, requestHeaders = {} } = input;
 

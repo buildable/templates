@@ -1,0 +1,18 @@
+{
+  "name": "postSubscriptionsResult",
+  "title": "<p>Creates a New Subscription on an Existing Customer. Each Customer Can Have up to 500 Active or Sc",
+  "description": "<p>creates a new subscription on an existing customer. Each customer can have up to 500 active or scheduled subscriptions.</p>\n\n<p>when you create a subscription with <code>collection_method=charge_automatically</code>, the first invoice is finalized as part of the request.\nThe <code>payment_behavior</code> parameter determines the exact behavior of the initial payment.</p>\n\n<p>to start subscriptions where the first invoice always begins in a <code>draft</code> status, use <a href=\"/docs/billing/subscriptions/subscription-schedules#managing\">subscription schedules</a> instead.\nSchedules provide the flexibility to model more complex billing configurations that change over time.</p> using the Stripe API",
+  "image": "https://assets.buildable.dev/catalog/node-templates/stripe.svg",
+  "platform": "stripe",
+  "type": "js-request-function",
+  "envVars": { "BUILDABLE_STRIPE_API_KEY": { "development": "", "production": "" } },
+  "fee": 0,
+  "category": "payments",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "tags": ["payments", "accounts"],
+  "stateType": "stateless",
+  "__version": "1.0.0",
+  "connections": [{ "id": "627aceaf971c67182d1d76ca", "type": "datastore" }]
+}

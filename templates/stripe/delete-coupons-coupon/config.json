@@ -1,0 +1,18 @@
+{
+  "name": "deleteCouponsCouponResult",
+  "title": "<p>You Can Delete Coupons via the <a href=\"https://dashboard.stripe.com/coupons\">coupon management</",
+  "description": "<p>you can delete coupons via the <a href=\"https://dashboard.Stripe.Com/coupons\">coupon management</a> page of the stripe dashboard. However, deleting a coupon does not affect any customers who have already applied the coupon; it means that new customers can’t redeem the coupon. You can also delete coupons via the api.</p> using the Stripe API",
+  "image": "https://assets.buildable.dev/catalog/node-templates/stripe.svg",
+  "platform": "stripe",
+  "type": "js-request-function",
+  "envVars": { "BUILDABLE_STRIPE_API_KEY": { "development": "", "production": "" } },
+  "fee": 0,
+  "category": "payments",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "tags": ["payments", "accounts"],
+  "stateType": "stateless",
+  "__version": "1.0.0",
+  "connections": [{ "id": "627aceaf971c67182d1d76ca", "type": "datastore" }]
+}

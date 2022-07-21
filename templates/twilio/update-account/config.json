@@ -5,8 +5,8 @@
   "image": "https://assets.buildable.dev/catalog/node-templates/twilio.svg",
   "platform": "twilio",
   "envVars": {
-    "TWILIO_ACCOUNT_SID": { "development": "", "production": "" },
-    "TWILIO_AUTH_TOKEN": { "development": "", "production": "" }
+    "BUILDABLE_TWILIO_ACCOUNT_SID": { "development": "", "production": "" },
+    "BUILDABLE_TWILIO_AUTH_TOKEN": { "development": "", "production": "" }
   },
   "fee": 0,
   "category": "communication",

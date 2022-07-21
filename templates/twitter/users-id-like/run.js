@@ -1,26 +1,7 @@
-/**
- * ----------------------------------------------------------------------------------------------------
- * Causes the User (in the Path) to Like the Specified Tweet [Run]
- *
- * @description - Causes the user (in the path) to like the specified tweet using the Twitter API
- *
- * @author    Buildable Technologies Inc.
- * @access    open
- * @license   MIT
- * @docs      https://developer.twitter.com/en/docs/api-reference-index#twitter-api-v2
- *
- * ----------------------------------------------------------------------------------------------------
- */
-
 const axios = require("axios");
 
-/**
- * The Node’s executable function
- *
- * @param {Run} input - Data passed to your Node from the input function
- */
 const run = async (input) => {
-  const { TWITTER_BEARER_TOKEN, id, tweet_id } = input;
+  const { BUILDABLE_TWITTER_BEARER_TOKEN, id, tweet_id } = input;
 
   verifyInput(input);
 
@@ -28,7 +9,7 @@ const run = async (input) => {
     const { data } = await axios({
       method: "post",
       url: `https://api.twitter.com/2/users/${id}/likes`,
-      headers: { Authorization: `Bearer ${TWITTER_BEARER_TOKEN}` },
+      headers: { Authorization: `Bearer ${BUILDABLE_TWITTER_BEARER_TOKEN}` },
       data: { tweet_id },
     });
 
@@ -45,17 +26,16 @@ const run = async (input) => {
 /**
  * Verifies the input parameters
  */
-const verifyInput = ({ TWITTER_BEARER_TOKEN, id, tweet_id }) => {
+const verifyInput = ({ BUILDABLE_TWITTER_BEARER_TOKEN, id, tweet_id }) => {
   const ERRORS = {
-    INVALID_TWITTER_BEARER_TOKEN:
-      "A valid TWITTER_BEARER_TOKEN field (string) was not provided in the input.",
+    INVALID_BUILDABLE_TWITTER_BEARER_TOKEN:
+      "A valid BUILDABLE_TWITTER_BEARER_TOKEN field (string) was not provided in the input.",
     INVALID_ID: "A valid id field (string) was not provided in the input.",
-    INVALID_TWEET_ID:
-      "A valid tweet_id field (string) was not provided in the input.",
+    INVALID_TWEET_ID: "A valid tweet_id field (string) was not provided in the input.",
   };
 
-  if (typeof TWITTER_BEARER_TOKEN !== "string")
-    throw new Error(ERRORS.INVALID_TWITTER_BEARER_TOKEN);
+  if (typeof BUILDABLE_TWITTER_BEARER_TOKEN !== "string")
+    throw new Error(ERRORS.INVALID_BUILDABLE_TWITTER_BEARER_TOKEN);
   if (typeof id !== "string") throw new Error(ERRORS.INVALID_ID);
   if (typeof tweet_id !== "string") throw new Error(ERRORS.INVALID_TWEET_ID);
 };

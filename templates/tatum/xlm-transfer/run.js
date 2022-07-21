@@ -1,28 +1,9 @@
-/**
- * ----------------------------------------------------------------------------------------------------
- * Send XLM / Asset From Tatum Ledger to Blockchain [Run]
- *
- * @description - Send xlm / asset from tatum ledger to blockchain using the Tatum API
- *
- * @author    Buildable Technologies Inc.
- * @access    open
- * @license   MIT
- * @docs      https://tatum.io/apidoc.php#operation/XlmTransfer
- *
- * ----------------------------------------------------------------------------------------------------
- */
-
 const axios = require("axios");
 
-/**
- * The Node’s executable function
- *
- * @param {Run} input - Data passed to your Node from the input function
- */
 const run = async (input) => {
   const {
-    TATUM_API_KEY,
-    TATUM_API_URL,
+    BUILDABLE_TATUM_API_KEY,
+    BUILDABLE_TATUM_API_URL,
     senderAccountId,
     fromAccount,
     address,
@@ -39,8 +20,8 @@ const run = async (input) => {
   try {
     const { data } = await axios({
       method: "post",
-      url: `${TATUM_API_URL}/v3/offchain/xlm/transfer`,
-      headers: { "x-api-key": TATUM_API_KEY },
+      url: "{TATUM_API_URL}/v3/offchain/xlm/transfer",
+      headers: { "x-api-key": BUILDABLE_TATUM_API_KEY },
       data: {
         senderAccountId,
         fromAccount,
@@ -68,8 +49,8 @@ const run = async (input) => {
  * Verifies the input parameters
  */
 const verifyInput = ({
-  TATUM_API_KEY,
-  TATUM_API_URL,
+  BUILDABLE_TATUM_API_KEY,
+  BUILDABLE_TATUM_API_URL,
   senderAccountId,
   fromAccount,
   address,
@@ -77,30 +58,24 @@ const verifyInput = ({
   secret,
 }) => {
   const ERRORS = {
-    INVALID_TATUM_API_KEY:
-      "A valid TATUM_API_KEY field (string) was not provided in the input.",
-    INVALID_TATUM_API_URL:
-      "A valid TATUM_API_URL field (string) was not provided in the input.",
+    INVALID_BUILDABLE_TATUM_API_KEY:
+      "A valid BUILDABLE_TATUM_API_KEY field (string) was not provided in the input.",
+    INVALID_BUILDABLE_TATUM_API_URL:
+      "A valid BUILDABLE_TATUM_API_URL field (string) was not provided in the input.",
     INVALID_SENDER_ACCOUNT_ID:
       "A valid senderAccountId field (string) was not provided in the input.",
-    INVALID_FROM_ACCOUNT:
-      "A valid fromAccount field (string) was not provided in the input.",
-    INVALID_ADDRESS:
-      "A valid address field (string) was not provided in the input.",
-    INVALID_AMOUNT:
-      "A valid amount field (string) was not provided in the input.",
-    INVALID_SECRET:
-      "A valid secret field (string) was not provided in the input.",
+    INVALID_FROM_ACCOUNT: "A valid fromAccount field (string) was not provided in the input.",
+    INVALID_ADDRESS: "A valid address field (string) was not provided in the input.",
+    INVALID_AMOUNT: "A valid amount field (string) was not provided in the input.",
+    INVALID_SECRET: "A valid secret field (string) was not provided in the input.",
   };
 
-  if (typeof TATUM_API_KEY !== "string")
-    throw new Error(ERRORS.INVALID_TATUM_API_KEY);
-  if (typeof TATUM_API_URL !== "string")
-    throw new Error(ERRORS.INVALID_TATUM_API_URL);
-  if (typeof senderAccountId !== "string")
-    throw new Error(ERRORS.INVALID_SENDER_ACCOUNT_ID);
-  if (typeof fromAccount !== "string")
-    throw new Error(ERRORS.INVALID_FROM_ACCOUNT);
+  if (typeof BUILDABLE_TATUM_API_KEY !== "string")
+    throw new Error(ERRORS.INVALID_BUILDABLE_TATUM_API_KEY);
+  if (typeof BUILDABLE_TATUM_API_URL !== "string")
+    throw new Error(ERRORS.INVALID_BUILDABLE_TATUM_API_URL);
+  if (typeof senderAccountId !== "string") throw new Error(ERRORS.INVALID_SENDER_ACCOUNT_ID);
+  if (typeof fromAccount !== "string") throw new Error(ERRORS.INVALID_FROM_ACCOUNT);
   if (typeof address !== "string") throw new Error(ERRORS.INVALID_ADDRESS);
   if (typeof amount !== "string") throw new Error(ERRORS.INVALID_AMOUNT);
   if (typeof secret !== "string") throw new Error(ERRORS.INVALID_SECRET);

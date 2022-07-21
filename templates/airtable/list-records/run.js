@@ -1,29 +1,10 @@
-/**
- * ----------------------------------------------------------------------------------------------------
- * List Records [Run]
- *
- * @description - List records from a table using the Airtable API
- *
- * @author    Buildable Technologies Inc.
- * @access    open
- * @license   MIT
- * @docs      https://airtable.com/api
- *
- * ----------------------------------------------------------------------------------------------------
- */
-
 const axios = require("axios");
 
-/**
- * The Node's executable function
- *
- * @param {Run} input - Data passed to your Node from the input function
- */
 const run = async (input) => {
   const {
-    AIRTABLE_API_KEY,
+    BUILDABLE_AIRTABLE_API_KEY,
     endpoint,
-    AIRTABLE_BASE_ID,
+    BUILDABLE_AIRTABLE_BASE_ID,
     tableName,
     pageSize = 10,
     page = 1,
@@ -34,12 +15,12 @@ const run = async (input) => {
 
   verifyInput(input);
 
-  const url = getUrl({ endpoint, AIRTABLE_BASE_ID, tableName, pageSize, fields, sort, filter });
+  const url = getUrl({ endpoint, BUILDABLE_AIRTABLE_BASE_ID, tableName, pageSize, fields, sort, filter });
 
   try {
     const { data } = await axios.get(url, {
       headers: {
-        Authorization: `Bearer ${AIRTABLE_API_KEY}`,
+        Authorization: `Bearer ${BUILDABLE_AIRTABLE_API_KEY}`,
       },
     });
 
@@ -80,8 +61,8 @@ const getSortParams = (sort) => {
 
 const getFieldsParams = (fields) => fields.reduce((acc, cur) => `${acc}fields[]=${cur}&`, "");
 
-const getUrl = ({ endpoint, AIRTABLE_BASE_ID, tableName, pageSize, fields, sort, filter }) => {
-  let url = `${endpoint}/${AIRTABLE_BASE_ID}/${tableName}`;
+const getUrl = ({ endpoint, BUILDABLE_AIRTABLE_BASE_ID, tableName, pageSize, fields, sort, filter }) => {
+  let url = `${endpoint}/${BUILDABLE_AIRTABLE_BASE_ID}/${tableName}`;
 
   const params = [];
 
@@ -116,20 +97,16 @@ const paginate = (data, page, pageSize) => {
   };
 };
 
-const verifyInput = ({ AIRTABLE_API_KEY, AIRTABLE_BASE_ID, endpoint, tableName }) => {
+const verifyInput = ({ BUILDABLE_AIRTABLE_API_KEY, BUILDABLE_AIRTABLE_BASE_ID, endpoint, tableName }) => {
   const ERRORS = {
-    INVALID_AIRTABLE_API_KEY: `A valid AIRTABLE_API_KEY field (string) was not provided in the input. 
-                                   You can add one to your environment variables at 
-                                   https://app.buildable.dev/settings/environment-variables.`,
-
+    INVALID_BUILDABLE_AIRTABLE_API_KEY: "A valid BUILDABLE_AIRTABLE_API_KEY field (string) was not provided in the input. Create your appropriate Connection to automatically add it.",
+    INVALID_BUILDABLE_AIRTABLE_BASE_ID: "A valid BUILDABLE_AIRTABLE_BASE_ID field (string) was not provided in the input. Create your appropriate Connection to automatically add it.",
     INVALID_ENDPOINT: "A valid endpoint field (string) was not provided in the input.",
-    INVALID_AIRTABLE_BASE_ID:
-      "A valid AIRTABLE_BASE_ID field (string) was not provided in the input.",
     INVALID_TABLE_NAME: "A valid tableName field (string) was not provided in the input.",
   };
 
-  if (typeof AIRTABLE_API_KEY !== "string") throw new Error(ERRORS.INVALID_AIRTABLE_API_KEY);
-  if (typeof AIRTABLE_BASE_ID !== "string") throw new Error(ERRORS.INVALID_AIRTABLE_BASE_ID);
+  if (typeof BUILDABLE_AIRTABLE_API_KEY !== "string") throw new Error(ERRORS.INVALID_BUILDABLE_AIRTABLE_API_KEY);
+  if (typeof BUILDABLE_AIRTABLE_BASE_ID !== "string") throw new Error(ERRORS.INVALID_BUILDABLE_AIRTABLE_BASE_ID);
   if (typeof tableName !== "string") throw new Error(ERRORS.INVALID_TABLE_NAME);
   if (typeof endpoint !== "string") throw new Error(ERRORS.INVALID_ENDPOINT);
 };

@@ -1,0 +1,18 @@
+{
+  "name": "postPaymentIntentsIntentCancelResult",
+  "title": "<p>A PaymentIntent Object Can Be Canceled when It Is in One of These Statuses: <Code>requires_paymen",
+  "description": "<p>a paymentintent object can be canceled when it is in one of these statuses: <code>requires_payment_method</code>, <code>requires_capture</code>, <code>requires_confirmation</code>, <code>requires_action</code>, or <code>processing</code>. </p>\n\n<p>once canceled, no additional charges will be made by the paymentintent and any operations on the paymentintent will fail with an error. For paymentintents with <code>status=’requires_capture’</code>, the remaining <code>amount_capturable</code> will automatically be refunded. </p>\n\n<p>you cannot cancel the paymentintent for a checkout session. <a href=\"/docs/api/checkout/sessions/expire\">expire the checkout session</a> instead</p> using the Stripe API",
+  "image": "https://assets.buildable.dev/catalog/node-templates/stripe.svg",
+  "platform": "stripe",
+  "type": "js-request-function",
+  "envVars": { "BUILDABLE_STRIPE_API_KEY": { "development": "", "production": "" } },
+  "fee": 0,
+  "category": "payments",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "tags": ["payments", "accounts"],
+  "stateType": "stateless",
+  "__version": "1.0.0",
+  "connections": [{ "id": "627aceaf971c67182d1d76ca", "type": "datastore" }]
+}

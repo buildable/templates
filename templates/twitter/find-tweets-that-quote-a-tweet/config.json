@@ -1,0 +1,18 @@
+{
+  "name": "findTweetsThatQuoteATweetResult",
+  "title": "Retrieve Tweets that Quote a Tweet.",
+  "description": "Retrieve tweets that quote a tweet. using the Twitter API",
+  "image": "https://assets.buildable.dev/catalog/node-templates/twitter.svg",
+  "type": "js-request-function",
+  "envVars": { "BUILDABLE_TWITTER_BEARER_TOKEN": { "development": "", "production": "" } },
+  "fee": 0,
+  "category": "social",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "platform": "twitter",
+  "tags": ["news", "tweet"],
+  "stateType": "stateless",
+  "__version": "1.0.0",
+  "connections": [{ "id": "62d86a790bd36f737a23f636", "type": "integration" }]
+}

@@ -1,23 +1,4 @@
-/**
- * ----------------------------------------------------------------------------------------------------
- * Axios Request [Input]
- *
- * @author    Buildable Technologies Inc.
- * @access    open
- * @license   MIT
- * @docs      https://axios-http.com/docs/api_intro
- *
- * ----------------------------------------------------------------------------------------------------
- */
-
-/**
- * Lets you select the input for your Node's run function
- *
- * @param {Params} params
- * @param {Object} $trigger - This Flow's request object
- * @param {Object} $nodes - Data from above Nodes
- */
-const nodeInput = ({ $trigger, $nodes }) => {
+const nodeInput = ({ $body, $headers, $env, $data }) => {
   return {
     method: "GET", // Required
     url: "https://api.yourcompanydomain.co", // Required

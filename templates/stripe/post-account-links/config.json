@@ -1,0 +1,18 @@
+{
+  "name": "postAccountLinksResult",
+  "title": "<p>Creates an AccountLink Object that Includes a Single-Use Stripe URL that the Platform Can Redirec",
+  "description": "<p>creates an accountlink object that includes a single-use stripe url that the platform can redirect their user to in order to take them through the connect onboarding flow.</p> using the Stripe API",
+  "image": "https://assets.buildable.dev/catalog/node-templates/stripe.svg",
+  "platform": "stripe",
+  "type": "js-request-function",
+  "envVars": { "BUILDABLE_STRIPE_API_KEY": { "development": "", "production": "" } },
+  "fee": 0,
+  "category": "payments",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "tags": ["payments", "accounts"],
+  "stateType": "stateless",
+  "__version": "1.0.0",
+  "connections": [{ "id": "627aceaf971c67182d1d76ca", "type": "datastore" }]
+}

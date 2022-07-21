@@ -1,54 +1,28 @@
-/**
- * ----------------------------------------------------------------------------------------------------
- * Get Account Balance [Run]
- *
- * @description - Get your account balance using the Stripe API.
- *
- * @author    Buildable Technologies Inc.
- * @access    open
- * @license   MIT
- * @docs      https://stripe.com/docs/api/balance/balance_retrieve
- *
- * ----------------------------------------------------------------------------------------------------
- */
+const axios = require("axios");
+const qs = require("qs");
 
-const Stripe = require("stripe");
-
-const getStripe = (key) =>
-  new Stripe(key, {
-    // apiVersion: null,
-    // maxNetworkRetries: 0,
-    // timeout: 80000,
-    // host: 'api.stripe.com',
-    // protocol: "https",
-    // port: 443,
-    // telemetry: true,
-  });
-
-/**
- * The Node’s executable function
- *
- * @param {Run} input - Data passed to your Node from the input function
- */
 const run = async (input) => {
-  const { STRIPE_SECRET_KEY } = input;
+  const { BUILDABLE_STRIPE_API_KEY, expand } = input;
 
   verifyInput(input);
 
   try {
-    const stripe = getStripe(STRIPE_SECRET_KEY);
+    const { data } = await axios({
+      method: "get",
+      url: "https://api.stripe.com/v1/balance",
+      headers: {
+        Authorization: `Bearer ${BUILDABLE_STRIPE_API_KEY}`,
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      params: { ...(expand ? { expand } : {}) },
+    });
 
-    const balance = await stripe.balance.retrieve();
-
-    return balance;
+    return data;
   } catch (error) {
     return {
       failed: true,
-      message: error?.message,
-      data: {
-        statusCode: error?.statusCode,
-        type: error?.type,
-      },
+      message: error.message,
+      data: error.response.data,
     };
   }
 };
@@ -56,12 +30,12 @@ const run = async (input) => {
 /**
  * Verifies the input parameters
  */
-const verifyInput = ({ STRIPE_SECRET_KEY }) => {
+const verifyInput = ({ BUILDABLE_STRIPE_API_KEY }) => {
   const ERRORS = {
-    NO_STRIPE_SECRET_KEY: `A valid STRIPE_SECRET_KEY is required. 
-                          You can add one to your environment variables at 
-                          https://app.buildable.dev/settings/environment-variables.`,
+    INVALID_BUILDABLE_STRIPE_API_KEY:
+      "A valid BUILDABLE_STRIPE_API_KEY field (string) was not provided in the input.",
   };
 
-  if (typeof STRIPE_SECRET_KEY === "undefined") throw new Error(ERRORS.NO_STRIPE_SECRET_KEY);
+  if (typeof BUILDABLE_STRIPE_API_KEY !== "string")
+    throw new Error(ERRORS.INVALID_BUILDABLE_STRIPE_API_KEY);
 };

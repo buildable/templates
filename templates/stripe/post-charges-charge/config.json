@@ -1,0 +1,18 @@
+{
+  "name": "postChargesChargeResult",
+  "title": "<p>Updates the Specified Charge by Setting the Values of the Parameters Passed. Any Parameters Not P",
+  "description": "<p>updates the specified charge by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p> using the Stripe API",
+  "image": "https://assets.buildable.dev/catalog/node-templates/stripe.svg",
+  "platform": "stripe",
+  "type": "js-request-function",
+  "envVars": { "BUILDABLE_STRIPE_API_KEY": { "development": "", "production": "" } },
+  "fee": 0,
+  "category": "payments",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "tags": ["payments", "accounts"],
+  "stateType": "stateless",
+  "__version": "1.0.0",
+  "connections": [{ "id": "627aceaf971c67182d1d76ca", "type": "datastore" }]
+}

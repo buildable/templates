@@ -1,24 +1,6 @@
-/**
- * ----------------------------------------------------------------------------------------------------
- * JSON RPC HTTP Driver [Input]
- *
- * @author    Buildable Technologies Inc.
- * @access    open
- * @license   MIT
- * @docs      https://tatum.io/apidoc.php#operation/LtcRpcDriver
- * ----------------------------------------------------------------------------------------------------
- */
-
-/**
- * Lets you select the input for your Node's run function
- *
- * @param {Params} params
- * @param {Object} $trigger - This Flow's request object
- * @param {Object} $nodes - Data from above Nodes
- */
-const nodeInput = ({ $trigger, $nodes }) => {
+const nodeInput = ({ $body, $headers, $env, $data }) => {
   return {
-    TATUM_API_URL: $trigger.env.TATUM_API_URL, // Required
+    BUILDABLE_TATUM_API_URL: $env.BUILDABLE_TATUM_API_URL, // Required
 
     // jsonrpc: "1.0",
     // id: "test",

@@ -1,0 +1,18 @@
+{
+  "name": "postInvoicesInvoicePayResult",
+  "title": "<p>Stripe Automatically Creates and Then Attempts to Collect Payment on Invoices for Customers on Su",
+  "description": "<p>stripe automatically creates and then attempts to collect payment on invoices for customers on subscriptions according to your <a href=\"https://dashboard.Stripe.Com/account/billing/automatic\">subscriptions settings</a>. However, if you’d like to attempt payment on an invoice out of the normal collection schedule or for some other reason, you can do so.</p> using the Stripe API",
+  "image": "https://assets.buildable.dev/catalog/node-templates/stripe.svg",
+  "platform": "stripe",
+  "type": "js-request-function",
+  "envVars": { "BUILDABLE_STRIPE_API_KEY": { "development": "", "production": "" } },
+  "fee": 0,
+  "category": "payments",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "tags": ["payments", "accounts"],
+  "stateType": "stateless",
+  "__version": "1.0.0",
+  "connections": [{ "id": "627aceaf971c67182d1d76ca", "type": "datastore" }]
+}

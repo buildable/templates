@@ -1,34 +1,82 @@
-/**
- * ----------------------------------------------------------------------------------------------------
- * Retrieve Tweets From a Space [Input]
- *
- * @author    Buildable Technologies Inc.
- * @access    open
- * @license   MIT
- * @docs      https://developer.twitter.com/en/docs/api-reference-index#twitter-api-v2
- * ----------------------------------------------------------------------------------------------------
- */
-
-/**
- * Lets you select the input for your Node's run function
- *
- * @param {Params} params
- * @param {Object} $trigger - This Flow's request object
- * @param {Object} $nodes - Data from above Nodes
- */
-const nodeInput = ({ $trigger, $nodes }) => {
+const nodeInput = ({ $body, $headers, $env, $data }) => {
   return {
-    TWITTER_BEARER_TOKEN: $trigger.env.TWITTER_BEARER_TOKEN, // Required
+    BUILDABLE_TWITTER_BEARER_TOKEN: $env.BUILDABLE_TWITTER_BEARER_TOKEN, // Required
     id: "1SLjjRYNejbKM", // Required
 
     // max_results: 25,
     // tweetFields: [
-    //     "created_at",
+    //     "attachments",
     //     "author_id",
-    //     "entities",
+    //     "context_annotations",
     //     "conversation_id",
+    //     "created_at",
+    //     "entities",
+    //     "geo",
+    //     "id",
+    //     "in_reply_to_user_id",
+    //     "lang",
+    //     "non_public_metrics",
+    //     "organic_metrics",
+    //     "possibly_sensitive",
+    //     "promoted_metrics",
+    //     "public_metrics",
+    //     "referenced_tweets",
     //     "reply_settings",
-    //     "public_metrics"
+    //     "source",
+    //     "text",
+    //     "withheld"
+    //   ],
+    // expansions: [
+    //     "attachments.media_keys",
+    //     "attachments.poll_ids",
+    //     "author_id",
+    //     "entities.mentions.username",
+    //     "geo.place_id",
+    //     "in_reply_to_user_id",
+    //     "referenced_tweets.id",
+    //     "referenced_tweets.id.author_id"
+    //   ],
+    // mediaFields: [
+    //     "alt_text",
+    //     "duration_ms",
+    //     "height",
+    //     "media_key",
+    //     "non_public_metrics",
+    //     "organic_metrics",
+    //     "preview_image_url",
+    //     "promoted_metrics",
+    //     "public_metrics",
+    //     "type",
+    //     "url",
+    //     "variants",
+    //     "width"
+    //   ],
+    // pollFields: ["duration_minutes", "end_datetime", "id", "options", "voting_status"],
+    // userFields: [
+    //     "created_at",
+    //     "description",
+    //     "entities",
+    //     "id",
+    //     "location",
+    //     "name",
+    //     "pinned_tweet_id",
+    //     "profile_image_url",
+    //     "protected",
+    //     "public_metrics",
+    //     "url",
+    //     "username",
+    //     "verified",
+    //     "withheld"
+    //   ],
+    // placeFields: [
+    //     "contained_within",
+    //     "country",
+    //     "country_code",
+    //     "full_name",
+    //     "geo",
+    //     "id",
+    //     "name",
+    //     "place_type"
     //   ],
   };
 };

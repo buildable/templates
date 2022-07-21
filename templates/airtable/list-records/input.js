@@ -17,10 +17,10 @@
  * @param {Object} $trigger - This Flow's request object
  * @param {Object} $nodes - Data from above Nodes
  */
-const nodeInput = ({ $trigger, $nodes }) => {
+const nodeInput = ({ $body, $headers, $env, $data }) => {
   return {
-    AIRTABLE_API_KEY: $trigger.env.AIRTABLE_API_KEY, // Required
-    AIRTABLE_BASE_ID: $trigger.env.AIRTABLE_BASE_ID, // Required
+    BUILDABLE_AIRTABLE_API_KEY: $env.BUILDABLE_AIRTABLE_API_KEY, // Required
+    BUILDABLE_AIRTABLE_BASE_ID: $env.BUILDABLE_AIRTABLE_BASE_ID, // Required
     endpoint: "https://api.airtable.com/v0", // Required
     tableName: "Table 1", // Required
 

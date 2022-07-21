@@ -1,0 +1,18 @@
+{
+  "name": "postCreditNotesResult",
+  "title": "<p>Issue a Credit Note to Adjust the Amount of a Finalized Invoice. For a <Code>status=open</code> I",
+  "description": "<p>issue a credit note to adjust the amount of a finalized invoice. For a <code>status=open</code> invoice, a credit note reduces\nits <code>amount_due</code>. For a <code>status=paid</code> invoice, a credit note does not affect its <code>amount_due</code>. Instead, it can result\nin any combination of the following:</p>\n\n<ul>\n<li>refund: create a new refund (using <code>refund_amount</code>) or link an existing refund (using <code>refund</code>).</li>\n<li>customer balance credit: credit the customer’s balance (using <code>credit_amount</code>) which will be automatically applied to their next invoice when it’s finalized.</li>\n<li>outside of stripe credit: record the amount that is or will be credited outside of stripe (using <code>out_of_band_amount</code>).</li>\n</ul>\n\n<p>for post-payment credit notes the sum of the refund, credit and outside of stripe amounts must equal the credit note total.</p>\n\n<p>you may issue multiple credit notes for an invoice. Each credit note will increment the invoice’s <code>pre_payment_credit_notes_amount</code>\nor <code>post_payment_credit_notes_amount</code> depending on its <code>status</code> at the time of credit note creation.</p> using the Stripe API",
+  "image": "https://assets.buildable.dev/catalog/node-templates/stripe.svg",
+  "platform": "stripe",
+  "type": "js-request-function",
+  "envVars": { "BUILDABLE_STRIPE_API_KEY": { "development": "", "production": "" } },
+  "fee": 0,
+  "category": "payments",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "tags": ["payments", "accounts"],
+  "stateType": "stateless",
+  "__version": "1.0.0",
+  "connections": [{ "id": "627aceaf971c67182d1d76ca", "type": "datastore" }]
+}

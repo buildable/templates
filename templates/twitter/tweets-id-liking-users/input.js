@@ -1,27 +1,48 @@
-/**
- * ----------------------------------------------------------------------------------------------------
- * Returns User Objects that Have Liked the Provided Tweet ID [Input]
- *
- * @author    Buildable Technologies Inc.
- * @access    open
- * @license   MIT
- * @docs      https://developer.twitter.com/en/docs/api-reference-index#twitter-api-v2
- * ----------------------------------------------------------------------------------------------------
- */
-
-/**
- * Lets you select the input for your Node's run function
- *
- * @param {Params} params
- * @param {Object} $trigger - This Flow's request object
- * @param {Object} $nodes - Data from above Nodes
- */
-const nodeInput = ({ $trigger, $nodes }) => {
+const nodeInput = ({ $body, $headers, $env, $data }) => {
   return {
-    TWITTER_BEARER_TOKEN: $trigger.env.TWITTER_BEARER_TOKEN, // Required
+    BUILDABLE_TWITTER_BEARER_TOKEN: $env.BUILDABLE_TWITTER_BEARER_TOKEN, // Required
     id: "1346889436626259968", // Required
 
     // max_results: 100,
     // pagination_token: "string",
+    // userFields: [
+    //     "created_at",
+    //     "description",
+    //     "entities",
+    //     "id",
+    //     "location",
+    //     "name",
+    //     "pinned_tweet_id",
+    //     "profile_image_url",
+    //     "protected",
+    //     "public_metrics",
+    //     "url",
+    //     "username",
+    //     "verified",
+    //     "withheld"
+    //   ],
+    // expansions: ["pinned_tweet_id"],
+    // tweetFields: [
+    //     "attachments",
+    //     "author_id",
+    //     "context_annotations",
+    //     "conversation_id",
+    //     "created_at",
+    //     "entities",
+    //     "geo",
+    //     "id",
+    //     "in_reply_to_user_id",
+    //     "lang",
+    //     "non_public_metrics",
+    //     "organic_metrics",
+    //     "possibly_sensitive",
+    //     "promoted_metrics",
+    //     "public_metrics",
+    //     "referenced_tweets",
+    //     "reply_settings",
+    //     "source",
+    //     "text",
+    //     "withheld"
+    //   ],
   };
 };

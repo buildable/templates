@@ -1,0 +1,18 @@
+{
+  "name": "postCustomersCustomerFundingInstructionsResult",
+  "title": "<p>Retrieve Funding Instructions for a Customer Cash Balance. If Funding Instructions Do Not yet Exi",
+  "description": "<p>retrieve funding instructions for a customer cash balance. If funding instructions do not yet exist for the customer, new\nfunding instructions will be created. If funding instructions have already been created for a given customer, the same\nfunding instructions will be retrieved. In other words, we will return the same funding instructions each time.</p> using the Stripe API",
+  "image": "https://assets.buildable.dev/catalog/node-templates/stripe.svg",
+  "platform": "stripe",
+  "type": "js-request-function",
+  "envVars": { "BUILDABLE_STRIPE_API_KEY": { "development": "", "production": "" } },
+  "fee": 0,
+  "category": "payments",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "tags": ["payments", "accounts"],
+  "stateType": "stateless",
+  "__version": "1.0.0",
+  "connections": [{ "id": "627aceaf971c67182d1d76ca", "type": "datastore" }]
+}

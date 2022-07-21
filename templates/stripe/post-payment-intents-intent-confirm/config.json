@@ -1,0 +1,18 @@
+{
+  "name": "postPaymentIntentsIntentConfirmResult",
+  "title": "<p>Confirm that Your Customer Intends to Pay with Current or ProvidedPayment Method. Upon Confirmati",
+  "description": "<p>confirm that your customer intends to pay with current or provided\npayment method. Upon confirmation, the paymentintent will attempt to initiate\na payment.</p>\n\n<p>if the selected payment method requires additional authentication steps, the\npaymentintent will transition to the <code>requires_action</code> status and\nsuggest additional actions via <code>next_action</code>. If payment fails,\nthe paymentintent will transition to the <code>requires_payment_method</code> status. If\npayment succeeds, the paymentintent will transition to the <code>succeeded</code>\nstatus (or <code>requires_capture</code>, if <code>capture_method</code> is set to <code>manual</code>).</p>\n\n<p>if the <code>confirmation_method</code> is <code>automatic</code>, payment may be attempted\nusing our <a href=\"/docs/stripe-js/reference#stripe-handle-card-payment\">client sdks</a>\nand the paymentintent’s <a href=\"#payment_intent_object-client_secret\">client_secret</a>.\nAfter <code>next_action</code>s are handled by the client, no additional\nconfirmation is required to complete the payment.</p>\n\n<p>if the <code>confirmation_method</code> is <code>manual</code>, all payment attempts must be\ninitiated using a secret key.\nIf any actions are required for the payment, the paymentintent will\nreturn to the <code>requires_confirmation</code> state\nafter those actions are completed. Your server needs to then\nexplicitly re-confirm the paymentintent to initiate the next payment\nattempt. Read the <a href=\"/docs/payments/payment-intents/web-manual\">expanded documentation</a>\nto learn more about manual confirmation.</p> using the Stripe API",
+  "image": "https://assets.buildable.dev/catalog/node-templates/stripe.svg",
+  "platform": "stripe",
+  "type": "js-request-function",
+  "envVars": { "BUILDABLE_STRIPE_API_KEY": { "development": "", "production": "" } },
+  "fee": 0,
+  "category": "payments",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "tags": ["payments", "accounts"],
+  "stateType": "stateless",
+  "__version": "1.0.0",
+  "connections": [{ "id": "627aceaf971c67182d1d76ca", "type": "datastore" }]
+}

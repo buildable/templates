@@ -1,0 +1,18 @@
+{
+  "name": "result",
+  "title": "<p>Redact a VerificationSession to Remove All Collected Information From Stripe. This Will Redactthe",
+  "description": "<p>redact a verificationsession to remove all collected information from stripe. This will redact\nthe verificationsession and all objects related to it, including verificationreports, events,\nrequest logs, etc.</p>\n\n<p>a verificationsession object can be redacted when it is in <code>requires_input</code> or <code>verified</code>\n<a href=\"/docs/identity/how-sessions-work\">status</a>. Redacting a verificationsession in <code>requires_action</code>\nstate will automatically cancel it.</p>\n\n<p>the redaction process may take up to four days. When the redaction process is in progress, the\nverificationsession’s <code>redaction.Status</code> field will be set to <code>processing</code>; when the process is\nfinished, it will change to <code>redacted</code> and an <code>identity.Verification_session.Redacted</code> event\nwill be emitted.</p>\n\n<p>redaction is irreversible. Redacted objects are still accessible in the stripe api, but all the\nfields that contain personal data will be replaced by the string <code>[redacted]</code> or a similar\nplaceholder. The <code>metadata</code> field will also be erased. Redacted objects cannot be updated or\nused for any purpose.</p>\n\n<p><a href=\"/docs/identity/verification-sessions#redact\">learn more</a>.</p> using the Stripe API",
+  "image": "https://assets.buildable.dev/catalog/node-templates/stripe.svg",
+  "platform": "stripe",
+  "type": "js-request-function",
+  "envVars": { "BUILDABLE_STRIPE_API_KEY": { "development": "", "production": "" } },
+  "fee": 0,
+  "category": "payments",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "tags": ["payments", "accounts"],
+  "stateType": "stateless",
+  "__version": "1.0.0",
+  "connections": [{ "id": "627aceaf971c67182d1d76ca", "type": "datastore" }]
+}

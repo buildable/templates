@@ -1,0 +1,18 @@
+{
+  "name": "postInvoicesResult",
+  "title": "<p>This Endpoint Creates a Draft Invoice for a Given Customer. The Draft Invoice Created Pulls in Al",
+  "description": "<p>this endpoint creates a draft invoice for a given customer. The draft invoice created pulls in all pending invoice items on that customer, including prorations. The invoice remains a draft until you <a href=\"#finalize_invoice\">finalize</a> the invoice, which allows you to <a href=\"#pay_invoice\">pay</a> or <a href=\"#send_invoice\">send</a> the invoice to your customers.</p> using the Stripe API",
+  "image": "https://assets.buildable.dev/catalog/node-templates/stripe.svg",
+  "platform": "stripe",
+  "type": "js-request-function",
+  "envVars": { "BUILDABLE_STRIPE_API_KEY": { "development": "", "production": "" } },
+  "fee": 0,
+  "category": "payments",
+  "accessType": "open",
+  "language": "javascript",
+  "price": "free",
+  "tags": ["payments", "accounts"],
+  "stateType": "stateless",
+  "__version": "1.0.0",
+  "connections": [{ "id": "627aceaf971c67182d1d76ca", "type": "datastore" }]
+}
